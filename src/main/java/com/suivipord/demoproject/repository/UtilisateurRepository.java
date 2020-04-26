@@ -10,8 +10,8 @@ import java.util.Collection;
 
 @Repository
 public interface UtilisateurRepository extends JpaRepository<Utilisateur,Long> {
-    public Utilisateur getUtlilisateurByCin(String cin);
-    @Query("SELECT u FROM Utilisateur u WHERE p.nom= :nom")
+    public Utilisateur getUtilisateurByCin(String cin);
+    @Query("SELECT u FROM Utilisateur u WHERE u.nom= :nom")
     Collection<Utilisateur> findAllByNom(@Param("nom") String nom);
 
 }

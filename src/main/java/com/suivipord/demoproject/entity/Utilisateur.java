@@ -9,12 +9,12 @@ public class Utilisateur implements Serializable {
 @Id
 @GeneratedValue(strategy=GenerationType.AUTO)
 Long idUser;
-Long cin;
+String cin;
 String nom;
 String prenom;
 String email;
-Date dateNaissance;
-Date dateIscription;
+String dateNaissance;
+String dateIscription;
 
     public Long getIdUser() {
         return idUser;
@@ -24,11 +24,9 @@ Date dateIscription;
         this.idUser = idUser;
     }
 
-    public Long getCin() {
-        return cin;
-    }
+    public String getCin() { return cin; }
 
-    public void setCin(Long cin) {
+    public void setCin(String cin) {
         this.cin = cin;
     }
 
@@ -56,19 +54,19 @@ Date dateIscription;
         this.email = email;
     }
 
-    public Date getDateNaissance() {
+    public String getDateNaissance() {
         return dateNaissance;
     }
 
-    public void setDateNaissance(Date dateNaissance) {
+    public void setDateNaissance(String dateNaissance) {
         this.dateNaissance = dateNaissance;
     }
 
-    public Date getDateIscription() {
+    public String getDateIscription() {
         return dateIscription;
     }
 
-    public void setDateIscription(Date dateIscription) {
+    public void setDateIscription(String dateIscription) {
         this.dateIscription = dateIscription;
     }
 }
