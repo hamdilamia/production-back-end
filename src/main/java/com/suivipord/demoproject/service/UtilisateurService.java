@@ -14,12 +14,12 @@ public class UtilisateurService {
     @Autowired
     UtilisateurRepository utilisateurRepository;
 
-    public Utilisateur add(Utilisateur p){
-        return utilisateurRepository.save(p);
+    public Utilisateur add(Utilisateur u){
+        return utilisateurRepository.save(u);
     }
 
-    public Utilisateur update(Utilisateur p){
-        return utilisateurRepository.save(p);
+    public Utilisateur update(Utilisateur u){
+        return utilisateurRepository.save(u);
     }
 
     public void delete(Long id){
