@@ -1,6 +1,8 @@
 package com.suivipord.demoproject;
 
+import com.suivipord.demoproject.entity.Produit;
 import com.suivipord.demoproject.entity.Utilisateur;
+import com.suivipord.demoproject.repository.ProduitRepository;
 import com.suivipord.demoproject.repository.UtilisateurRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -14,7 +16,8 @@ import java.util.Collection;
 public class DemoprojectApplication implements CommandLineRunner {
 
     @Autowired
-    UtilisateurRepository utilisateurRepository;
+    /*UtilisateurRepository utilisateurRepository;*/
+    ProduitRepository produitRepository;
 
     public static void main(String[] args) {
         try{
@@ -26,7 +29,7 @@ public class DemoprojectApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args0) throws Exception {
-        Utilisateur u1 = new Utilisateur();
+        /*Utilisateur u1 = new Utilisateur();
         u1.setNom("Hamdi");
         u1.setPrenom("Lamia");
         u1.setCin("12345678");
@@ -51,7 +54,25 @@ public class DemoprojectApplication implements CommandLineRunner {
         }
         else{
             System.out.print("n'exist pas");
+        }*/
+
+
+        Produit p1=new Produit("00ff36","chemise X");
+        produitRepository.save(p1);
+        Produit p2=new Produit("00ff38","robe Y");
+        produitRepository.save(p2);
+
+
+        Produit p3= produitRepository.getProduitByRef("00ff23");
+        if(p3 != null){
+            System.out.println("exist");
+            System.out.println("Reference:"+p3.getRef());
+            System.out.println("designation:"+p3.getDesignation());
         }
+        else{
+            System.out.print("n'exist pas");
+        }
+
 
 
     }
