@@ -1,6 +1,7 @@
 package com.suivipord.demoproject.entity;
 import javax.persistence.*;
 import java.io.Serializable;
+import java.net.URL;
 import java.sql.Date;
 
 @Entity

@@ -14,19 +14,19 @@ public class UtilisateurService {
     @Autowired
     UtilisateurRepository utilisateurRepository;
 
-    public Utilisateur add(Utilisateur u){
+    public Utilisateur ajoutUser(Utilisateur u){
         return utilisateurRepository.save(u);
     }
 
-    public Utilisateur update(Utilisateur u){
+    public Utilisateur modifierUser(Utilisateur u){
         return utilisateurRepository.save(u);
     }
 
-    public void delete(Long id){
+    public void supprimerUser(Long id){
         utilisateurRepository.deleteById(id);
     }
 
-    public List<Utilisateur> getAll (){
+    public List<Utilisateur> afficherTtUser (){
         return utilisateurRepository.findAll();
     }
 

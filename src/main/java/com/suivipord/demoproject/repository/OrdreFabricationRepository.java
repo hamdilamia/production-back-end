@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.Collection;
 
 public interface OrdreFabricationRepository extends JpaRepository<OrdreFabrication,Long> {
-    public OrdreFabrication getOrdreFabricationByRefCmdClient(String ref);
+    public OrdreFabrication getOrdreFabricationByRefCmdClient(String refCmdClient);
     @Query("SELECT o FROM OrdreFabrication o WHERE o.refCmdClient= :refCmdClient")
     Collection<OrdreFabrication> findAllByRefCmdClient(@Param("refCmdClient") String refCmdClient);
 }

@@ -18,23 +18,23 @@ public class ProduitRestController {
     ProduitService produitService;
     @PostMapping("/add")
     public Produit add(@RequestBody Produit p){
-        return produitService.add(p);
+        return produitService.ajouterProduit(p);
     }
 
 
     @PutMapping ("/update")
     public Produit update(@RequestBody Produit p){
-        return produitService.update(p);
+        return produitService.modifierProduit(p);
     }
 
     @GetMapping("/getAll")
     public List<Produit> getAll(){
-        return produitService.getAll();
+        return produitService.afficherTtProduit();
     }
 
 
     @DeleteMapping ("/delete/{id}")
     public void delete(@PathVariable Long id){
-        produitService.delete(id);
+        produitService.supprimerProduit(id);
     }
 }

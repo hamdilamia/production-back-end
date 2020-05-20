@@ -15,24 +15,24 @@ public class UtilisateurRestController {
     UtilisateurService utilisateurService;
     @PostMapping("/add")
     public Utilisateur add(@RequestBody Utilisateur p){
-        return utilisateurService.add(p);
+        return utilisateurService.ajoutUser(p);
     }
 
 
     @PutMapping ("/update")
     public Utilisateur update(@RequestBody Utilisateur p){
-        return utilisateurService.update(p);
+        return utilisateurService.modifierUser(p);
     }
 
     @GetMapping("/getAll")
     public List<Utilisateur> getAll(){
-        return utilisateurService.getAll();
+        return utilisateurService.afficherTtUser();
     }
 
 
     @DeleteMapping ("/delete/{id}")
     public void delete(@PathVariable Long id){
-        utilisateurService.delete(id);
+        utilisateurService.supprimerUser(id);
     }
 
 }

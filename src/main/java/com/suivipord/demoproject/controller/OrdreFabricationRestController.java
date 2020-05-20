@@ -16,23 +16,23 @@ public class OrdreFabricationRestController {
     OrdreFabricationService ordreFabricationService;
     @PostMapping("/add")
     public OrdreFabrication add(@RequestBody OrdreFabrication p){
-        return ordreFabricationService.add(p);
+        return ordreFabricationService.ajouterOf(p);
     }
 
 
     @PutMapping ("/update")
     public OrdreFabrication update(@RequestBody OrdreFabrication p){
-        return ordreFabricationService.update(p);
+        return ordreFabricationService.modifierOf(p);
     }
 
     @GetMapping("/getAll")
     public List<OrdreFabrication> getAll(){
-        return ordreFabricationService.getAll();
+        return ordreFabricationService.afficherTtOf();
     }
 
 
     @DeleteMapping ("/delete/{id}")
     public void delete(@PathVariable Long idOf){
-        ordreFabricationService.delete(idOf);
+        ordreFabricationService.supprimerOf(idOf);
     }
 }

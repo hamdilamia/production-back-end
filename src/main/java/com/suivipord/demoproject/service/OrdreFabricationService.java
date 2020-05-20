@@ -15,19 +15,19 @@ public class OrdreFabricationService {
     @Autowired
     OrdreFabricationRepository ordreFabricationRepository ;
 
-    public OrdreFabrication add(OrdreFabrication o){
+    public OrdreFabrication ajouterOf(OrdreFabrication o){
         return ordreFabricationRepository.save(o);
     }
 
-    public OrdreFabrication update(OrdreFabrication o){
+    public OrdreFabrication modifierOf(OrdreFabrication o){
         return ordreFabricationRepository.save(o);
     }
 
-    public void delete(Long idOf){
+    public void supprimerOf(Long idOf){
         ordreFabricationRepository.deleteById(idOf);
     }
 
-    public List<OrdreFabrication> getAll (){
+    public List<OrdreFabrication> afficherTtOf (){
 
         return ordreFabricationRepository.findAll();
     }
