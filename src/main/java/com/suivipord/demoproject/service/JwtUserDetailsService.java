@@ -39,6 +39,11 @@ public class JwtUserDetailsService implements UserDetailsService {
         newUser.setPassword(bcryptEncoder.encode(user.getPassword()));
         newUser.setRole(user.getRole());
         newUser.setEmail(user.getEmail());
+        newUser.setNom(user.getNom());
+        newUser.setPrenom(user.getPrenom());
+        newUser.setCin(user.getCin());
+        newUser.setDateIscription(user.getDateIscription());
+        newUser.setDateNaissance(user.getDateNaissance());
         return userDao.save(newUser);
     }
 
@@ -61,7 +66,7 @@ public class JwtUserDetailsService implements UserDetailsService {
     }
 
     public DAOUser modifierCompte (UserDTO user) {
-        Optional<DAOUser> userA = userDao.findById(user.Id);
+        Optional<DAOUser> userA = userDao.findById(user.id);
 
         if(userA.isPresent())
         {
@@ -70,6 +75,11 @@ public class JwtUserDetailsService implements UserDetailsService {
             newEntity.setPassword(user.getPassword());
             newEntity.setRole(user.getRole());
             newEntity.setEmail(user.getEmail());
+            newEntity.setCin(user.getCin());
+            newEntity.setNom(user.getNom());
+            newEntity.setPrenom(user.getPrenom());
+            newEntity.setDateNaissance(user.getDateNaissance());
+            newEntity.setDateIscription(user.getDateIscription());
 
             newEntity = userDao.save(newEntity);
 
